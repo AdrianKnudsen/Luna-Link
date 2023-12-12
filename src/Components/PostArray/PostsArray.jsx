@@ -1,4 +1,4 @@
-// postsArray.js
+// postsArray.jsx
 const postsArray = [
   {
     userName: "Alice",
