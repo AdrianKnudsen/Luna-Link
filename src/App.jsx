@@ -1,7 +1,9 @@
 import { useState } from "react";
 
-function App() {
-  return <></>;
+export function App() {
+  return (
+    <>
+      <h1>Hello</h1>
+    </>
+  );
 }
-
-export default App;
