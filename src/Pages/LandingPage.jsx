@@ -1,3 +1,5 @@
+import {CreatePost} from "../Components/Post/CreatePost"
+
 export function LandingPage(){
     return(
         <>
