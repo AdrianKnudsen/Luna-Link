@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { LayoutBase } from './Pages/LayoutBase';
+import { LandingPage } from './Pages/LandingPage';
 
 export function App() {
   return (
     <>
-      <h1>Hello</h1>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element = {<LayoutBase/>}>
+              <Route index element= {<LandingPage/>}/>
+              <Route path='*' element={<h1>404 Not Found</h1>}/>
+            </Route>
+          </Routes>
+        </BrowserRouter>
     </>
   );
 }
