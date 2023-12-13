@@ -1,0 +1,95 @@
+.createPostContainer{
+    display: flex;
+    flex-direction: column;
+    width: 54vw;
+    height: 264px;
+    min-width: 352px;
+    padding: 20px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    border-radius: 16px;
+    background: var(--Dark-3, #262D34);
+    color: #858EAD;
+}
+
+
+.user{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.name{
+    flex: 1;
+    padding: 12px 0px 12px 12px;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: var(--Dark-4, #2C353D);
+    color:  #FFF;
+    border: none;
+
+}
+.name::placeholder{
+    color:  #858EAD;
+}
+
+.button{
+   
+    width: 112px;
+    height: 44px;
+    padding: 12px 16px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: #227443;
+    color: var(--secondary-color-background, #FFF);
+    border: none;
+
+}
+
+.postOptions{
+    width: 100%;
+    padding: 12px 0px 12px 12px;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: var(--Dark-4, #2C353D);
+    color: #858EAD;
+    border: none;
+
+}
+
+.postTextarea{
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+    height: 109px;
+    padding: 10.939px 0px 10.939px 10.939px;
+    align-items: flex-start;
+    gap: 9.116px;
+    resize: none;
+    overflow: auto;
+    border-radius: 5.47px;
+    background: var(--Dark-4, #2C353D);
+    color: #E3E3E3;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px; /* 183.333% */
+    border: none;
+}
+
+.postTextarea::placeholder{
+    color: var(--secondary-color-secondary-4, #858EAD);
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+}
