@@ -1,3 +1,25 @@
-.headerTitle{
-    background-color: aquamarine;
+.headerBackground {
+  background-color: #262d34;
+  width: 100%;
+  height: 5.94rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* .logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.logo {
+  height: 100%;
+  width: 12rem;
+  margin-right: 7vw;
 }
