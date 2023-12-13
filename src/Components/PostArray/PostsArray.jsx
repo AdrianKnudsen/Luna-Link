@@ -1,4 +1,4 @@
-const postsArray = [
+const postsArray  = [
   {
     userName: "Alice",
     category: "General",
@@ -79,3 +79,5 @@ const postsArray = [
 ];
 
 export default postsArray;
+
+

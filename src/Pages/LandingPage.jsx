@@ -1,11 +1,11 @@
-import {CreatePost} from "../Components/Post/CreatePost"
-import { Post } from "../Components/Post/Post"
+
+import { CreatePost } from "../Components/Post/CreatePost"
+import {Posts} from "../Components/Post/Posts"
 
 export function LandingPage(){
     return(
         <>
             <main>
-                
                 <h1>Main</h1>
             </main>
         </>
