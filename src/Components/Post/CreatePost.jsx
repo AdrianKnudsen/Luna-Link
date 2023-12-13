@@ -1,15 +1,19 @@
 import styles from "./CreatePost.module.css"
-import postsArray from '../PostArray/PostsArray';
+import importedPostsArray from '../PostArray/PostsArray';
 import { useState } from "react"
 export function CreatePost(){
 
+  const [postsArray, setPostsArray] = useState(importedPostsArray);
+  console.log(postsArray)
+
   const [postData, setPostData] = useState({
+    key:postsArray.length + 1,
     userName: '',
     category: '',
     post: '',
   });
 
-  const [postsArray, setPostsArray] = useState([]);
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +28,7 @@ export function CreatePost(){
       const newPost = { ...postData };
       setPostsArray((prevPosts) => [...prevPosts, newPost]); 
       setPostData({
+        key: '',
         userName: '',
         category: '',
         post: '',
