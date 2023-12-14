@@ -1,10 +1,12 @@
 import styles from "./CreatePost.module.css"
 import importedPostsArray from '../PostArray/PostsArray';
 import { useState } from "react"
+
+
 export function CreatePost(){
 
   const [postsArray, setPostsArray] = useState(importedPostsArray);
-  console.log(postsArray)
+  
 
   const [postData, setPostData] = useState({
     key:postsArray.length + 1,
@@ -33,7 +35,8 @@ export function CreatePost(){
         category: '',
         post: '',
       });
-    } else {
+    console.log(postsArray)
+  } else {
       console.error('Please fill in all fields');
     }
   };
