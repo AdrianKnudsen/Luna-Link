@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 
@@ -16,7 +17,7 @@ export function Header() {
               alt="Logo"
             />
           </div>
-          <div className={styles.homeBtn}>
+          <Link to="/About" className={styles.homeBtn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -36,7 +37,7 @@ export function Header() {
                 </clipPath>
               </defs>
             </svg>
-          </div>
+          </Link>
           <div className={styles.centerSearch}>
             <SearchBar onSearch={handleSearch} placeholder="Search here..." />
           </div>

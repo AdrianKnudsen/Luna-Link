@@ -31,6 +31,7 @@
   height: 50%;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .additionalContent {
