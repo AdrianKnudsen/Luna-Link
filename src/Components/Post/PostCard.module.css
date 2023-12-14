@@ -10,6 +10,7 @@
     border-radius: 16px;
     background: var(--Dark-3, #262D34);
     color: #858EAD;
+    margin-bottom: 20px;
 }
 
 .postContainerHeader{
