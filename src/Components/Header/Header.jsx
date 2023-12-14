@@ -8,7 +8,7 @@ export function Header() {
   };
   return (
     <>
-      <header className={styles.headerBackground}>
+      <header className={styles.headerContainer}>
         <nav className={styles.navbar}>
           <div className={styles.logoContainer}>
             <img
