@@ -10,11 +10,11 @@ export function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/About" element={<About />} />
-          <Route path="/ForumMain" element={<ForumMain />} />
-          <Route path="/Contact" element={<ContactPage />} />
           <Route path="/" element={<LayoutBase />}>
             <Route index element={<LandingPage />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/ForumMain" element={<ForumMain />} />
+            <Route path="/Contact" element={<ContactPage />} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
           </Route>
         </Routes>
