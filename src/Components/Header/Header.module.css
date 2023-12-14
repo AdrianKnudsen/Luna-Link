@@ -4,12 +4,14 @@
   height: 5.94rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   padding: 10px 20px;
+  width: 100%;
 }
 
 .logo {
@@ -18,9 +20,29 @@
   margin-right: 2vw;
 }
 
+.logoContainer {
+  flex: 0 0 auto;
+}
+
+.homeBtn {
+  padding: 0.63rem;
+  border-radius: 7px;
+  background: #686868;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
 .additionalContent {
   display: flex;
   align-items: center;
+}
+
+.centerSearch {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .notifyBox {
@@ -49,7 +71,4 @@
   color: #f7f7f7;
   font-size: 16px;
   margin: 0.7rem;
-}
-
-@media screen and (min-width: 630px) {
 }
