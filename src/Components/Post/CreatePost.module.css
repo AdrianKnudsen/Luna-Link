@@ -83,7 +83,7 @@
 
 .postTextarea::placeholder {
   color: var(--secondary-color-secondary-4, #858ead);
-  font-family: Source Sans Pro;
+  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
