@@ -11,13 +11,9 @@ export function Header() {
       <header className={styles.headerContainer}>
         <nav className={styles.navbar}>
           <div className={styles.logoContainer}>
-            <img
-              className={styles.logo}
-              src="public/Luna Link Logo.svg"
-              alt="Logo"
-            />
+            <img className={styles.logo} src="/Luna Link Logo.svg" alt="Logo" />
           </div>
-          <Link to="/About" className={styles.homeBtn}>
+          <Link to="/" className={styles.homeBtn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -43,12 +39,12 @@ export function Header() {
           </div>
           <div className={styles.additionalContent}>
             <div className={styles.notifyBox}>
-              <img src="public/images/notify.svg" alt="Notification" />
+              <img src="/images/notify.svg" alt="Notification" />
             </div>
             <div className={styles.userContent}>
               <img
                 className={styles.userimg}
-                src="public/images/Memoji Boys 2-1.png"
+                src="/images/Memoji Boys 2-1.png"
                 alt="User Avatar"
               />
               <h6 className={styles.text}>Emil</h6>

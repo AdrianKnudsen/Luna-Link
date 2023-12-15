@@ -5,9 +5,10 @@
   background-color: #1e252b;
   color: #e3e3e3;
 }
-h1 {
+.headText {
   margin-bottom: 10px;
   text-align: center;
+  margin-top: 8rem;
 }
 
 .introText {

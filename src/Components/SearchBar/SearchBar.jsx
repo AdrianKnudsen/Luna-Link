@@ -29,7 +29,7 @@ const SearchBar = ({ onSearch, placeholder }) => {
 
       <img
         className={styles.searchIcon}
-        src="public/images/searchicon.svg"
+        src="/images/searchicon.svg"
         alt="Search Icon"
         onClick={handleSearch}
       />

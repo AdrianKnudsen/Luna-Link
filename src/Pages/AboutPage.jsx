@@ -4,7 +4,7 @@ export function About() {
   return (
     <>
       <div className={styles.aboutPage}>
-        <h1>About Luna Links</h1>
+        <h1 className={styles.headText}>About Luna Links</h1>
         <p className={styles.introText}>
           At Luna Links were more than just a forum. Were a thriving community
           built on shared interests, open discussions, and the passion for
