@@ -1,3 +1,4 @@
+
 import styles from "./CreatePost.module.css"
 import importedPostsArray from '../PostArray/PostsArray';
 import { useState } from "react"
@@ -6,22 +7,19 @@ import { useState } from "react"
 export function CreatePost(){
 
   const [postsArray, setPostsArray] = useState(importedPostsArray);
-  
-
   const [postData, setPostData] = useState({
-    key:postsArray.length + 1,
+    key:'',
     userName: '',
     category: '',
     post: '',
   });
-
-  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setPostData((prevData) => ({
       ...prevData,
       [name]: value,
+      key:Date.now().toString(),
     }));
   };
 
@@ -35,6 +33,8 @@ export function CreatePost(){
         category: '',
         post: '',
       });
+
+ 
     console.log(postsArray)
   } else {
       console.error('Please fill in all fields');
