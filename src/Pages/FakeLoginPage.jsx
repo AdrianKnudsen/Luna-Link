@@ -39,11 +39,19 @@ const FakeLoginPage = () => {
           className={styles.input}
         />
       </label>
+      <div className={styles.forgot}>
+        <div>
+          <p>Forgot Password?</p>
+        </div>
+        <div>
+          <p>Create Account</p>
+        </div>
+      </div>
       <br />
+
       <button onClick={handleLogin} className={styles.button}>
         Login
       </button>
-      <LogoutButton />
     </div>
   );
 };
