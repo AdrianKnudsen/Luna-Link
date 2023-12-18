@@ -1,0 +1,13 @@
+.mainContainer {
+  text-align: center;
+  background-color: #2c353d;
+  padding: 35px;
+  color: #e3e3e3;
+  margin-top: 50px;
+  border-radius: 12px;
+}
+
+.mainText {
+  font-size: 20px;
+  color: #e3e3e3;
+}
