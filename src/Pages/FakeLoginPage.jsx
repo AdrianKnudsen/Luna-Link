@@ -18,7 +18,7 @@ const FakeLoginPage = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <h1>Login Page</h1>
+      <h1>Log in to Luna Link</h1>
       <label className={styles.label}>
         Username:
         <input
