@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styles from "./FakeLoginPage.module.css";
-import LogoutButton from "../Components/LogoutButton";
 
 const FakeLoginPage = () => {
   const [username, setUsername] = useState("");
