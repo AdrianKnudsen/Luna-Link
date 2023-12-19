@@ -13,7 +13,7 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
               name="category"
               value={category}
               checked={selectedCategory === category}
-              onChange={(e) => onCategoryChange(e.target.value)}
+              onChange={(event) => onCategoryChange(event.target.value)}
               className={styles.radio}
             />
             <span className={styles.labelText}>#{category}</span>
@@ -25,9 +25,9 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
 };
 
 CategoryFilter.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired, // categories is an array of strings
-  selectedCategory: PropTypes.string.isRequired, // selectedCategory is a string
-  onCategoryChange: PropTypes.func.isRequired, // onCategoryChange is a function
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedCategory: PropTypes.string.isRequired,
+  onCategoryChange: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;
