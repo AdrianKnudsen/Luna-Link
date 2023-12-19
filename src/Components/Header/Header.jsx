@@ -15,7 +15,7 @@ export function Header({ setSearchTerm }) {
           <div className={styles.logoContainer}>
             <img className={styles.logo} src="/Luna Link Logo.svg" alt="Logo" />
           </div>
-          <Link to="/" className={styles.homeBtn}>
+          <Link to="/Home" className={styles.homeBtn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
