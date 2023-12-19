@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LayoutBase } from "./Pages/LayoutBase";
 import { LandingPage } from "./Pages/LandingPage";
@@ -6,11 +7,21 @@ import { About } from "./Pages/AboutPage";
 import { ContactPage } from "./Pages/ContactPage";
 
 export function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LayoutBase />}>
+          <Route
+            path="/"
+            element={
+              <LayoutBase
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+              />
+            }
+          >
             <Route index element={<LandingPage />} />
             <Route path="/About" element={<About />} />
             <Route path="/ForumMain" element={<ForumMain />} />

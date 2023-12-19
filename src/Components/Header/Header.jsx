@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import SearchBar from "../SearchBar/SearchBar.jsx";
+import PropTypes from "prop-types";
 
-export function Header() {
-  const handleSearch = (searchResults) => {
-    console.log("Search Results:", searchResults);
+export function Header({ setSearchTerm }) {
+  const handleSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
   };
+
   return (
     <>
       <header className={styles.headerContainer}>
@@ -67,3 +69,7 @@ export function Header() {
     </>
   );
 }
+
+Header.propTypes = {
+  setSearchTerm: PropTypes.func.isRequired,
+};
