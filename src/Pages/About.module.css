@@ -6,9 +6,10 @@
   color: #e3e3e3;
 }
 .headText {
+  font-size: 30px;
   margin-bottom: 10px;
   text-align: center;
-  margin-top: 8rem;
+  /* margin-top: 8rem; */
 }
 
 .introText {
@@ -47,6 +48,6 @@
 }
 .seeYouText {
   position: relative;
-  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(223, 12, 12, 0.2));
+  -webkit-box-reflect: below -29px linear-gradient(transparent, rgba(223, 12, 12, 0.2));
   font-size: 30px;
 }

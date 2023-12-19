@@ -9,7 +9,11 @@
     padding: 35px;
     color: #e3e3e3;
   }
-
+  .contactPagecontainer h1,
+  p {
+    text-align: center;
+    padding: 10px 30px;
+  }
   .contactform {
     max-width: 400px;
     padding: 20px;
@@ -17,8 +21,8 @@
     border-radius: 12px;
     background-color: #1e252b;
     color: #c3bcbc;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 10%;
+    margin-right: 5%;
     margin-bottom: 25px;
     margin-top: 15px;
   }
@@ -64,11 +68,16 @@
     background-color: #2c353d;
     padding: 10px;
     color: #e3e3e3;
-    font-size: 18px;
+    /* font-size: 18px; */
     margin-left: 25%;
     margin-right: 25%;
-
+    padding: 10px 25px;
     max-width: 50%;
+  }
+  .contactPagecontainer h1,
+  p {
+    text-align: center;
+    padding: 10px 30px;
   }
 
   .contactform {
