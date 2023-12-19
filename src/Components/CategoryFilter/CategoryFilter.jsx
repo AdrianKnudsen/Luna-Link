@@ -1,23 +1,34 @@
 import styles from "./CategoryFilter.module.css";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
+  const [activeCategory, setActiveCategory] = useState(selectedCategory);
+
+  const handleFilterClick = (category) => {
+    if (activeCategory === category) {
+      setActiveCategory(""); // Clears the active category
+      onCategoryChange(""); // Notify parent component
+    } else {
+      setActiveCategory(category);
+      onCategoryChange(category);
+    }
+  };
+
   return (
     <div className={styles.categoryFilter}>
-      <div className={styles.title}>Popular Categories</div>
+      <div className={styles.title}>Popular Categories:</div>
       <div className={styles.categories}>
         {categories.map((category) => (
-          <label key={category} className={styles.category}>
-            <input
-              type="radio"
-              name="category"
-              value={category}
-              checked={selectedCategory === category}
-              onChange={(event) => onCategoryChange(event.target.value)}
-              className={styles.radio}
-            />
+          <div
+            key={category}
+            className={`${styles.category} ${
+              activeCategory === category ? styles.active : ""
+            }`}
+            onClick={() => handleFilterClick(category)}
+          >
             <span className={styles.labelText}>#{category}</span>
-          </label>
+          </div>
         ))}
       </div>
     </div>

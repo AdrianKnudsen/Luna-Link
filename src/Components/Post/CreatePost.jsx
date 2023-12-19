@@ -5,8 +5,9 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { useOutletContext } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export function CreatePost() {
+export function CreatePost({ selectedCategory }) {
   const [postsArray, setPostsArray] = useState([]);
   const [shuffledPosts, setShuffledPosts] = useState([]);
   const [postData, setPostData] = useState({
@@ -61,13 +62,15 @@ export function CreatePost() {
     }
   };
 
-  // Combine new posts with shuffled posts and then apply the filter
+  // Combine new posts with shuffled posts and then apply both filters
   const combinedPosts = [...postsArray, ...shuffledPosts];
+
   const filteredPosts = combinedPosts.filter(
     (post) =>
-      post.userName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.post.toLowerCase().includes(searchTerm.toLowerCase())
+      (selectedCategory === "" || post.category === selectedCategory) &&
+      (post.userName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.post.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (
@@ -177,3 +180,7 @@ function shuffleArray(array) {
   }
   return array;
 }
+
+CreatePost.propTypes = {
+  selectedCategory: PropTypes.string,
+};
