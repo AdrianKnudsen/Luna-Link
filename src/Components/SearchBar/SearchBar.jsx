@@ -7,6 +7,13 @@ const SearchBar = ({ onSearch, placeholder }) => {
 
   const handleSearch = () => {
     onSearch(searchTerm);
+    setSearchTerm(""); // Clear the search input
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
@@ -17,6 +24,7 @@ const SearchBar = ({ onSearch, placeholder }) => {
         placeholder={placeholder}
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
+        onKeyPress={handleKeyPress}
       />
 
       <img
