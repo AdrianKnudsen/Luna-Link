@@ -1,11 +1,10 @@
 
 import styles from "./CreatePost.module.css"
 import importedPostsArray from '../PostArray/PostsArray';
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import  SearchBar from "../SearchBar/SearchBar";
 import { useOutletContext } from "react-router-dom";
 
 
@@ -17,6 +16,9 @@ export function CreatePost(){
     category: '',
     post: '',
   });
+  const { searchTerm} = useOutletContext();
+
+ 
 
  
 
@@ -40,6 +42,8 @@ export function CreatePost(){
         category: '',
         post: '',
       });  
+
+     
       toast.success('Post created successfully!', {
         position: 'top-right',
         autoClose: 3000,
@@ -59,12 +63,6 @@ export function CreatePost(){
     });
     }
   };
-
-  useEffect(()=>{
-    console.log(postsArray),[postsArray]
-  })
-
-  const { searchTerm } = useOutletContext();
 
   const filteredPosts = [...importedPostsArray, ...postsArray].filter(
     (post) =>
