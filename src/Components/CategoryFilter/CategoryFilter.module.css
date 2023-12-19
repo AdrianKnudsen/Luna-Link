@@ -1,0 +1,41 @@
+.categoryFilter {
+  background-color: #1a1d23;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: white;
+  margin-right: 20px;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+}
+
+.category {
+  position: relative;
+}
+
+.radio {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.radio + .labelText {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #262d34;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.radio:checked + .labelText {
+  background-color: #4caf50;
+}
