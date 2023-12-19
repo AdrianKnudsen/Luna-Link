@@ -24,8 +24,8 @@ export function App() {
               />
             }
           >
-            <Route index element={<LandingPage />} />
             <Route index element={<FakeLoginPage />} />
+            <Route index element={<LandingPage />} />
             <Route path="/Home" element={<LandingPage />} />
             <Route path="/Loggedin" element={<MainPage />} />
             <Route path="/About" element={<About />} />
