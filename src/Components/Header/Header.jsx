@@ -1,21 +1,19 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import SearchBar from "../SearchBar/SearchBar.jsx";
+import PropTypes from "prop-types";
 
-export function Header() {
-  const handleSearch = (searchResults) => {
-    console.log("Search Results:", searchResults);
+export function Header({ setSearchTerm }) {
+  const handleSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
   };
+
   return (
     <>
       <header className={styles.headerContainer}>
         <nav className={styles.navbar}>
           <div className={styles.logoContainer}>
-            <img
-              className={styles.logo}
-              src="public/Luna Link Logo.svg"
-              alt="Logo"
-            />
+            <img className={styles.logo} src="/Luna Link Logo.svg" alt="Logo" />
           </div>
           <Link to="/Home" className={styles.homeBtn}>
             <svg
@@ -43,12 +41,12 @@ export function Header() {
           </div>
           <div className={styles.additionalContent}>
             <div className={styles.notifyBox}>
-              <img src="public/images/notify.svg" alt="Notification" />
+              <img src="/images/notify.svg" alt="Notification" />
             </div>
             <div className={styles.userContent}>
               <img
                 className={styles.userimg}
-                src="public/images/Memoji Boys 2-1.png"
+                src="/images/Memoji Boys 2-1.png"
                 alt="User Avatar"
               />
               <h6 className={styles.text}>Emil</h6>
@@ -71,3 +69,7 @@ export function Header() {
     </>
   );
 }
+
+Header.propTypes = {
+  setSearchTerm: PropTypes.func.isRequired,
+};
