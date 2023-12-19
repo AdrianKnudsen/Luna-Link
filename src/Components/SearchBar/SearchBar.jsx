@@ -1,20 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./SearchBar.module.css";
-import postsArray from "../PostArray/PostsArray";
 
 const SearchBar = ({ onSearch, placeholder }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
-    const searchResults = postsArray.filter(
-      (post) =>
-        post.userName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.post.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    onSearch(searchResults);
+    onSearch(searchTerm);
   };
 
   return (
@@ -29,7 +21,7 @@ const SearchBar = ({ onSearch, placeholder }) => {
 
       <img
         className={styles.searchIcon}
-        src="public/images/searchicon.svg"
+        src="/images/searchicon.svg"
         alt="Search Icon"
         onClick={handleSearch}
       />
