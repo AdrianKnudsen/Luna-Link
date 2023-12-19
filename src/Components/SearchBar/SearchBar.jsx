@@ -7,7 +7,12 @@ const SearchBar = ({ onSearch, placeholder }) => {
 
   const handleSearch = () => {
     onSearch(searchTerm);
+    setSearchTerm("");  // Clear the search input
   };
+
+ 
+    
+  
 
   return (
     <div className={styles.searchBar}>
