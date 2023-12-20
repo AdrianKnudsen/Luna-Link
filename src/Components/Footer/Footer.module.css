@@ -1,29 +1,29 @@
 .footerContainer {
   display: flex;
   width: 100%;
-  padding: 46px 0px 21px 0px;
+  padding: 20px 0px 10px 0px;
   flex-direction: column;
   align-items: center;
-  gap: 41px;
+  gap: 20px;
   background: var(--Dark-3, #262d34);
   color: #fff;
-  /* position: fixed; */
+  position: fixed;
 }
 
 .footerLinks {
   list-style-type: none;
   display: flex;
-  gap: 44px;
+  gap: 30px;
 }
 
 a {
   text-decoration: none;
   color: #fff;
   text-align: right;
-  font-family: Inter;
+  font-family: Poppins;
   font-size: 1.25rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: normal;
 }
 
@@ -33,9 +33,9 @@ a:focus {
 }
 
 .footerText {
-  font-family: Source Sans Pro;
-  font-size: 1rem;
+  font-family: Poppins;
+  font-size: 0.8rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.5rem;
 }
