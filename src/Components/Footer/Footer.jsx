@@ -10,9 +10,6 @@ export function Footer() {
             <Link to="/Contact">Contact</Link>
           </li>
           <li className={styles.footerLink}>
-            <Link to="/Home">Home</Link>
-          </li>
-          <li className={styles.footerLink}>
             <Link to="/About">About</Link>
           </li>
         </ul>
