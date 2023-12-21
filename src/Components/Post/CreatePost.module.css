@@ -148,6 +148,7 @@
   align-items: center;
   border-radius: 15px;
   background: var(--Dark-4, #2c353d);
+  cursor: pointer;
 }
 
 .userName {
