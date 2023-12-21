@@ -3,6 +3,20 @@ import styles from "./About.module.css";
 export function About() {
   return (
     <>
+      <div className="area">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <div className={styles.aboutPage}>
         <h1 className={styles.headText}>About Luna Link</h1>
         <p className={styles.introText}>
