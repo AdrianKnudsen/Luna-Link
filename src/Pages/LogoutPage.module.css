@@ -1,3 +1,10 @@
+.logoutContent {
+  height: 68vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logoutContainer {
   text-align: center;
   max-width: 400px;
