@@ -9,6 +9,20 @@ export function LandingPage() {
 
   return (
     <>
+      <div className="area">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <main className={styles.main}>
         <CategoryFilter
           categories={categories}
