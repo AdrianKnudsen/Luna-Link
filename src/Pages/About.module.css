@@ -1,8 +1,11 @@
+.overflow {
+  overflow: auto;
+}
+
 .aboutPage {
   max-width: 800px;
   margin: 0 auto;
   padding: 10px;
-  background-color: #1e252b;
   color: #e3e3e3;
   height: 88vh;
   display: flex;
@@ -51,6 +54,5 @@
   margin-top: 10px;
   margin-bottom: 20rem;
   position: relative;
-  -webkit-box-reflect: below -29px linear-gradient(transparent, rgba(223, 12, 12, 0.2));
   font-size: 30px;
 }
