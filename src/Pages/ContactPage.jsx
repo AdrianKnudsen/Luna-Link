@@ -8,7 +8,7 @@ export function ContactPage() {
     <>
       <div className={style.contactPagecontainer}>
         <div className={style.headertext}>
-          <h1>Contact Luna Link</h1>
+          <h1 className={style.header}>Contact Luna Link</h1>
           <p>
             We would love to hear from you! Whether you have a question,
             feedback, or just want to say hello, feel free to reach out to us

@@ -17,9 +17,13 @@ export function CreatePost({ selectedCategory }) {
   });
   const { searchTerm } = useOutletContext();
 
-  // Shuffle and combine posts on initial render
   useEffect(() => {
-    setShuffledPosts(shuffleArray([...importedPostsArray]));
+    const initializedPosts = importedPostsArray.map((post) => ({
+      ...post,
+      likes: Math.floor(Math.random() * 1000) + 1,
+      isLiked: false,
+    }));
+    setShuffledPosts(shuffleArray(initializedPosts));
   }, []);
 
   const handleInputChange = (e) => {
@@ -32,16 +36,19 @@ export function CreatePost({ selectedCategory }) {
 
   const handleCreatePost = () => {
     if (postData.userName && postData.category && postData.post) {
-      const newPost = { ...postData, key: Date.now().toString() };
-      setPostsArray((prevPosts) => [newPost, ...prevPosts]);
-
+      const newPost = {
+        ...postData,
+        key: Date.now().toString(),
+        likes: Math.floor(Math.random() * 1000) + 1,
+        isLiked: false,
+      };
+      setPostsArray([newPost, ...postsArray]);
       setPostData({
         key: "",
         userName: "",
         category: "",
         post: "",
       });
-
       toast.success("Post created successfully!", {
         position: "top-right",
         autoClose: 3000,
@@ -62,7 +69,19 @@ export function CreatePost({ selectedCategory }) {
     }
   };
 
-  // Combine new posts with shuffled posts and then apply both filters
+  const toggleLike = (key) => {
+    const updatedPosts = shuffledPosts.map((post) =>
+      post.key === key
+        ? {
+            ...post,
+            isLiked: !post.isLiked,
+            likes: post.isLiked ? post.likes - 1 : post.likes + 1,
+          }
+        : post
+    );
+    setShuffledPosts(updatedPosts);
+  };
+
   const combinedPosts = [...postsArray, ...shuffledPosts];
 
   const filteredPosts = combinedPosts.filter(
@@ -77,6 +96,7 @@ export function CreatePost({ selectedCategory }) {
     <>
       <ToastContainer />
       <div className={styles.createPostContainer}>
+        {/* Input Fields */}
         <div className={styles.user}>
           <input
             type="text"
@@ -87,6 +107,30 @@ export function CreatePost({ selectedCategory }) {
             onChange={handleInputChange}
           />
 
+          <select
+            className={styles.postOptions}
+            value={postData.category}
+            name="category"
+            onChange={handleInputChange}
+          >
+            <option value="" disabled>
+              Category: “General“, “Streaming”, “Games”
+            </option>
+            <option value="General">General</option>
+            <option value="Streaming">Streaming</option>
+            <option value="Games">Games</option>
+          </select>
+
+          <textarea
+            className={styles.postTextarea}
+            value={postData.post}
+            name="post"
+            placeholder="Post:"
+            onChange={handleInputChange}
+            cols="30"
+            rows="10"
+          ></textarea>
+
           <button
             type="button"
             className={styles.button}
@@ -95,35 +139,10 @@ export function CreatePost({ selectedCategory }) {
             Create Post
           </button>
         </div>
-
-        <select
-          className={styles.postOptions}
-          value={postData.category}
-          name="category"
-          id=""
-          onChange={handleInputChange}
-        >
-          <option value="" disabled>
-            Category: “General“, “Streaming”, “Games”
-          </option>
-          <option value="General">General</option>
-          <option value="Streaming">Streaming</option>
-          <option value="Games">Games</option>
-        </select>
-
-        <textarea
-          className={styles.postTextarea}
-          value={postData.post}
-          name="post"
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Post:"
-          onChange={handleInputChange}
-        ></textarea>
       </div>
 
       <div className={styles.postListContainer}>
+        {/* Post List */}
         <ul>
           {filteredPosts.map((post) => (
             <li key={post.key} className={styles.postList}>
@@ -131,38 +150,31 @@ export function CreatePost({ selectedCategory }) {
                 <p className={styles.userName}>{post.userName}</p>
                 <p>{post.category}</p>
                 <div className={styles.headerLikes}>
-                  <p>10,920 Likes</p>
-                  <div className={styles.iconCircle}>
+                  <p>{post.likes} Likes</p>
+                  <div
+                    className={styles.iconCircle}
+                    onClick={() => toggleLike(post.key)}
+                  >
                     <svg
                       className={styles.icon}
                       width="20"
                       height="18"
                       viewBox="0 0 20 18"
-                      fill="none"
+                      fill={post.isLiked ? "#FF0000" : "#C5D0E6"} // Red if liked, else default color
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g id="Heart">
-                        <path
-                          id="Subtract"
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.28472 0.286348C0.582052 1.41945 -0.738149 5.24881 0.391497 8.59912C2.20862 13.9716 10.0014 18 10.0014 18C10.0014 18 17.8521 13.9096 19.6102 8.59912C20.7388 5.24881 19.4102 1.41945 15.7075 0.286348C13.762 -0.306707 11.5332 0.0733286 10.0014 1.19843C8.38219 0.0413257 6.23239 -0.310707 4.28472 0.286348ZM13.7574 3.27342C13.3561 3.17072 12.9476 3.41276 12.8448 3.81404C12.7421 4.21532 12.9842 4.62388 13.3855 4.72658C14.768 5.08042 15.5877 6.00903 15.6825 6.93366C15.7247 7.34572 16.093 7.64549 16.5051 7.60323C16.9171 7.56097 17.2169 7.19267 17.1747 6.78062C16.9982 5.06045 15.5644 3.73591 13.7574 3.27342Z"
-                          fill="#C5D0E6"
-                        />
-                      </g>
+                      {/* SVG Path */}
+                      <path d="M4.28472 0.286348C0.582052 1.41945 -0.738149 5.24881 0.391497 8.59912C2.20862 13.9716 10.0014 18 10.0014 18C10.0014 18 17.8521 13.9096 19.6102 8.59912C20.7388 5.24881 19.4102 1.41945 15.7075 0.286348C13.762 -0.306707 11.5332 0.0733286 10.0014 1.19843C8.38219 0.0413257 6.23239 -0.310707 4.28472 0.286348Z" />
                     </svg>
                   </div>
                 </div>
               </div>
-
               <textarea
                 className={styles.post}
-                name=""
-                id=""
-                cols="30"
-                rows="10"
                 readOnly
                 value={post.post}
+                cols="30"
+                rows="10"
               ></textarea>
             </li>
           ))}
@@ -172,7 +184,10 @@ export function CreatePost({ selectedCategory }) {
   );
 }
 
-// Utility function to shuffle an array (Fisher-Yates shuffle algorithm)
+CreatePost.propTypes = {
+  selectedCategory: PropTypes.string,
+};
+
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -180,7 +195,3 @@ function shuffleArray(array) {
   }
   return array;
 }
-
-CreatePost.propTypes = {
-  selectedCategory: PropTypes.string,
-};
