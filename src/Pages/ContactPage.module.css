@@ -55,6 +55,7 @@ p {
 
 .formtextarea {
   height: 5rem;
+  resize: none;
 }
 
 .sendbutton {
