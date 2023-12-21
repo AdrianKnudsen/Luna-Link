@@ -17,40 +17,42 @@ const FakeLoginPage = () => {
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <h1>Log in to Luna Link</h1>
-      <label className={styles.label}>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className={styles.input}
-        />
-      </label>
-      <br />
-      <label className={styles.label}>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className={styles.input}
-        />
-      </label>
-      <div className={styles.forgot}>
-        <div>
-          <p>Forgot Password?</p>
+    <div className={styles.loginPage}>
+      <div className={styles.loginContainer}>
+        <h1>Log in to Luna Link</h1>
+        <label className={styles.label}>
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className={styles.input}
+          />
+        </label>
+        <br />
+        <label className={styles.label}>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.input}
+          />
+        </label>
+        <div className={styles.forgot}>
+          <div>
+            <p>Forgot Password?</p>
+          </div>
+          <div>
+            <p>Create Account</p>
+          </div>
         </div>
-        <div>
-          <p>Create Account</p>
-        </div>
-      </div>
-      <br />
+        <br />
 
-      <button onClick={handleLogin} className={styles.button}>
-        Login
-      </button>
+        <button onClick={handleLogin} className={styles.button}>
+          Login
+        </button>
+      </div>
     </div>
   );
 };

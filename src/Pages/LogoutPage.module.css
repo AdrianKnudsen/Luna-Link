@@ -1,5 +1,5 @@
 .logoutContent {
-  height: 68vh;
+  height: 88vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,8 +19,8 @@
 
 .loginLink {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
+  margin-top: 3rem;
+  padding: 10px 30px;
   background-color: #15c332;
   color: #e3e3e3;
   text-decoration: none;
