@@ -6,10 +6,7 @@ const LogoutPage = () => {
     <div className={styles.logoutContent}>
       <div className={styles.logoutContainer}>
         <h1>Welcome back!</h1>
-        <p>
-          We hope to see you again soon. If youd like to log in again, click the
-          button below:
-        </p>
+        <p>We hope to see you again soon.</p>
         <Link to="/" className={styles.loginLink}>
           Log In
         </Link>
