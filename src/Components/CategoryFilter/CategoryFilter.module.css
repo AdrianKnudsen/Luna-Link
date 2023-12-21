@@ -37,3 +37,22 @@
   cursor: pointer;
   background-color: #3b434c;
 }
+
+@media screen and (max-width: 590px) {
+  .categories {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .categoryFilter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    flex-shrink: 0;
+  }
+
+  .title {
+    text-align: center;
+  }
+}
