@@ -1,3 +1,9 @@
+.loginPage {
+  height: 88vh;
+  display: flex;
+  align-items: center;
+}
+
 .loginContainer {
   max-width: 400px;
   margin: 10px auto;
@@ -6,17 +12,21 @@
   border-radius: 12px;
   background-color: #2c353d;
   color: #e3e3e3;
+  width: 100%;
 }
+
 h1 {
   padding: 5px 0px;
   font-size: 20px;
   text-align: center;
 }
+
 .forgot {
   gap: 10px;
   font-size: 14px;
   margin-top: 0;
 }
+
 .label {
   display: block;
   margin-bottom: 10px;
