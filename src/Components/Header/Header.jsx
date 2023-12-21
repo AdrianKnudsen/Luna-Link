@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import PropTypes from "prop-types";
+import DropdownMenu from "../DropdownMenu.jsx";
 
 export function Header({ setSearchTerm }) {
   const handleSearch = (searchTerm) => {
@@ -41,7 +42,7 @@ export function Header({ setSearchTerm }) {
           </div>
           <div className={styles.additionalContent}>
             <div className={styles.notifyBox}>
-              <img src="/images/notify.svg" alt="Notification" />
+              <DropdownMenu />
             </div>
             <div className={styles.userContent}>
               <img
