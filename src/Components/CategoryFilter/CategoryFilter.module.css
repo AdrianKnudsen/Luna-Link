@@ -7,11 +7,11 @@
   align-items: center;
   justify-content: space-between;
   width: 54.1%;
-  margin-top: 1rem;
+  margin-top: 7rem;
 }
 
 .title {
-  color: white;
+  color: whitesmoke;
   margin-right: 20px;
 }
 
@@ -24,7 +24,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   background-color: #262d34;
-  color: white;
+  color: whitesmoke;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
