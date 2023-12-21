@@ -74,3 +74,18 @@
   font-size: 16px;
   margin: 0.7rem;
 }
+
+@media screen and (max-width: 590px) {
+  .logo {
+    width: 9rem;
+    margin-left: -1rem;
+  }
+
+  .homeBtn {
+    margin-right: -1rem;
+  }
+
+  .notifyBox {
+    margin-left: -1rem;
+  }
+}

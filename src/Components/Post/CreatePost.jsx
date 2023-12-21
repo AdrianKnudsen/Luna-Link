@@ -96,7 +96,6 @@ export function CreatePost({ selectedCategory }) {
     <>
       <ToastContainer />
       <div className={styles.createPostContainer}>
-        {/* Input Fields */}
         <div className={styles.user}>
           <input
             type="text"
@@ -142,7 +141,6 @@ export function CreatePost({ selectedCategory }) {
       </div>
 
       <div className={styles.postListContainer}>
-        {/* Post List */}
         <ul>
           {filteredPosts.map((post) => (
             <li key={post.key} className={styles.postList}>
@@ -163,7 +161,6 @@ export function CreatePost({ selectedCategory }) {
                       fill={post.isLiked ? "#FF0000" : "#C5D0E6"} // Red if liked, else default color
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      {/* SVG Path */}
                       <path d="M4.28472 0.286348C0.582052 1.41945 -0.738149 5.24881 0.391497 8.59912C2.20862 13.9716 10.0014 18 10.0014 18C10.0014 18 17.8521 13.9096 19.6102 8.59912C20.7388 5.24881 19.4102 1.41945 15.7075 0.286348C13.762 -0.306707 11.5332 0.0733286 10.0014 1.19843C8.38219 0.0413257 6.23239 -0.310707 4.28472 0.286348Z" />
                     </svg>
                   </div>
