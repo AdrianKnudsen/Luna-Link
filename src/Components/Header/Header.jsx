@@ -9,6 +9,10 @@ export function Header({ setSearchTerm }) {
     setSearchTerm(searchTerm);
   };
 
+  const onLogout = () => {
+    console.log("User logged out");
+  };
+
   return (
     <>
       <header className={styles.headerContainer}>
@@ -42,7 +46,7 @@ export function Header({ setSearchTerm }) {
           </div>
           <div className={styles.additionalContent}>
             <div className={styles.notifyBox}>
-              <DropdownMenu />
+              <DropdownMenu onLogout={onLogout} />
             </div>
             <div className={styles.userContent}>
               <img
