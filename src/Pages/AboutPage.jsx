@@ -6,9 +6,9 @@ export function About() {
       <div className={styles.aboutPage}>
         <h1 className={styles.headText}>About Luna Link</h1>
         <p className={styles.introText}>
-          At Luna Link were more than just a forum. We are a thriving community
+          ❝At Luna Link were more than just a forum. We are a thriving community
           built on shared interests, open discussions, and the passion for
-          connecting with others.
+          connecting with others.❞
         </p>
 
         <div className={styles.section}>
