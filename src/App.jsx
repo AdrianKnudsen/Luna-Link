@@ -8,6 +8,7 @@ import LogoutPage from "./Pages/LogoutPage";
 import FakeLoginPage from "./Pages/FakeLoginPage";
 import MainPage from "./Pages/MainPage";
 import { UserProvider } from "./UserContext";
+import VideoBackground from "./VideoBackground";
 
 export function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,14 +34,7 @@ export function App() {
               <Route path="/About" element={<About />} />
               <Route path="/Contact" element={<ContactPage />} />
               <Route path="/Loggedout" element={<LogoutPage />} /> ll
-              <Route
-                path="*"
-                element={
-                  <h1 className="error">
-                    404 <br /> Page Not Found
-                  </h1>
-                }
-              />
+              <Route path="*" element={<VideoBackground />} />
             </Route>
           </Routes>
         </BrowserRouter>
