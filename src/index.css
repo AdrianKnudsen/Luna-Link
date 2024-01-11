@@ -9,6 +9,13 @@ body {
   background-color: #1e252b;
 }
 
+.error {
+  padding-top: 25rem;
+  padding-bottom: 25.5rem;
+  color: #fff;
+  text-align: center;
+}
+
 .context {
   width: 100%;
   position: absolute;
